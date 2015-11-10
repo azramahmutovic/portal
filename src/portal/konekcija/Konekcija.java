@@ -71,7 +71,7 @@ public class Konekcija {
 		}
 	}
 	
-	public Statement getStatement() {
+	public Statement getStatement(Connection konekcija) {
 		try {
 		// za datu konekciju kreira i vraæa objekat klase Statement
 		iskaz = konekcija.createStatement();

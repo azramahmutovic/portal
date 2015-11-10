@@ -20,8 +20,7 @@ public class KorisnikDAO {
     	try {
     		
     		db.open();
-    		db.getConnection();
-    		statement = db.getStatement();
+    		statement = db.getStatement(db.getConnection());
     		resultSet = statement
     		          .executeQuery("select * from portal.korisnik");
     		
