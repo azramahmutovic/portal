@@ -7,14 +7,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Login Page</h1>
+<br/><br/><br/><br/><br/>
         <center>
-            <h2>Signup Details</h2>
-            <form action="loginCheck.jsp" method="post">
-            <br/>Email:<input type="text" name="email">
-            <br/>Password:<input type="password" name="password">
-            <br/><input type="submit" value="Submit">
-            </form>
+            <h2>
+            <%
+            String a=session.getAttribute("email").toString();
+            out.println("Hello  "+a);
+            %>
+            </h2>
+            <br/>
+            <br/>
+            <br/><br/><br/><br/><br/>
+        <a href="logout.jsp">Logout</a>
         </center>
 </body>
 </html>

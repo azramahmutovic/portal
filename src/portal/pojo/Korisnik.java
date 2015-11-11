@@ -1,5 +1,7 @@
 package portal.pojo;
 
+import portal.dao.KorisnikDAO;
+
 public class Korisnik {
 	
 	private Integer id;
@@ -23,5 +25,16 @@ public class Korisnik {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public boolean checkLogin(String email, String password){
+		
+		KorisnikDAO dao = new KorisnikDAO();
+		Korisnik k = dao.dajKorisnikaPoEmailu(email);
+		if(k != null && k.getPassword().equals(password))
+			return true;
+		else
+			return false;
+			
 	}
 }

@@ -2,6 +2,7 @@ package portal.dao;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -13,6 +14,7 @@ public class KorisnikDAO {
 	Konekcija db = new Konekcija();
 	private ResultSet resultSet = null;
     private Statement statement = null;
+    private PreparedStatement preparedStatement = null;
     
     public List<Korisnik> dajKorisnike(){
     	
@@ -22,7 +24,7 @@ public class KorisnikDAO {
     		db.open();
     		statement = db.getStatement(db.getConnection());
     		resultSet = statement
-    		          .executeQuery("select * from portal.korisnik");
+    		          .executeQuery("select * from korisnik");
     		
     		
     		while(resultSet.next()){
@@ -42,4 +44,29 @@ public class KorisnikDAO {
     	
     	return korisnici;
     }
+    
+	public Korisnik dajKorisnikaPoEmailu(String email){
+		
+		Korisnik korisnik = new Korisnik();
+		
+		try {
+			
+    		db.open();
+			preparedStatement = db.prepareStatement(db.getConnection(), "select * from korisnik where email=?");
+			preparedStatement.setString(1, email);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			if(resultSet.next()){
+				korisnik.setId(resultSet.getInt("id"));
+				korisnik.setEmail(resultSet.getString("email"));
+				korisnik.setPassword(resultSet.getString("password"));
+			}
+			
+    		db.closeConnection();	
+    		
+    	} catch (Exception e) {
+    		e.printStackTrace();
+    		}
+		
+		 return korisnik;
+	}
 }

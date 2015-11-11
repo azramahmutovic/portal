@@ -7,14 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Login Page</h1>
-        <center>
-            <h2>Signup Details</h2>
-            <form action="loginCheck.jsp" method="post">
-            <br/>Email:<input type="text" name="email">
-            <br/>Password:<input type="password" name="password">
-            <br/><input type="submit" value="Submit">
-            </form>
-        </center>
+	<h1>Some Error has occured,Please try again later...</h1>
 </body>
 </html>

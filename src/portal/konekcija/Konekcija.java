@@ -1,6 +1,7 @@
 package portal.konekcija;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -30,6 +31,7 @@ public class Konekcija {
 	static Connection konekcija = null; // osobina konekcija za BP
 	private Connection connection; // druga konekcija za BP
 	static Statement iskaz = null; // osobina naredba za rad sa BP
+	static PreparedStatement pripremljeniIskaz = null;
 	static ResultSet rezultat = null; // Osobina skup redova rezultata
 	static DatabaseMetaData metaPodaci = null; // Osobina meta podataka
 	
@@ -79,6 +81,16 @@ public class Konekcija {
 		e.printStackTrace();
 		}
 		return iskaz;
+		}
+	
+	public PreparedStatement prepareStatement(Connection konekcija, String sql) {
+		try {
+			pripremljeniIskaz = konekcija.prepareStatement(sql);
+		} catch (SQLException e) {
+		e.printStackTrace();
+		}
+		
+		return pripremljeniIskaz;
 		}
 
 }
