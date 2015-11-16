@@ -31,7 +31,7 @@ public class Korisnik {
 		
 		KorisnikDAO dao = new KorisnikDAO();
 		Korisnik k = dao.dajKorisnikaPoEmailu(email);
-		if(k != null && k.getPassword().equals(password))
+		if(!k.getEmail().equals("") && !k.getPassword().equals("") && k.getEmail().equals(email) && k.getPassword().equals(password))
 			return true;
 		else
 			return false;

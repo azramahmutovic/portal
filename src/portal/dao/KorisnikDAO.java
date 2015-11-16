@@ -60,7 +60,10 @@ public class KorisnikDAO {
 				korisnik.setEmail(resultSet.getString("email"));
 				korisnik.setPassword(resultSet.getString("password"));
 			}
-			
+			else{
+				korisnik.setEmail("");
+				korisnik.setPassword("");
+			}
     		db.closeConnection();	
     		
     	} catch (Exception e) {

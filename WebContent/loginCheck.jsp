@@ -17,8 +17,10 @@
             session.setAttribute("email",email);
             response.sendRedirect("home.jsp");
         }
-        else
-            response.sendRedirect("error.jsp");
+        else{
+        	response.sendRedirect("error.jsp");
+        }
+            
         %>
 </body>
 </html>
