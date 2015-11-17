@@ -19,16 +19,21 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <title>Insert title here</title>
-    <script src="js/otvaranjestranice.js"></script>/*Zana rekla da ovdje stavim*/
+    <script src="js/otvaranjestranice.js"></script>
     <script src="js/validacija.js"></script>
 </head>
 <body>
 <div class="background"></div>
-<section id="login">
+<section id="login" >
+
     <header>
-        <h1>Portal</h1>
+    
+        <h1>Thunderwear</h1>
+       
     </header>
+    
     <form class="form-horizontal" role="form" action="loginCheck.jsp" method="post">
+    
         <div class="form-group">
             <label class="control-label col-sm-2" for="email">
                 <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
@@ -39,6 +44,7 @@
             </div>
         </div>
         <div class="form-group">
+      	  
             <label class="control-label col-sm-2" for="pwd">
                 <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
             </label>
