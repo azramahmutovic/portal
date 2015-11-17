@@ -25,10 +25,11 @@
     <section id="kategorije">
       <header>
         <h1>Categories</h1>
+        <p>Select all the topics you're interested in</p>
       </header>
       <div class="btn-group" data-toggle="buttons">
       <div class="row">
-        <div class="col-xs-6 col-md-3">
+        <div class="col-md-3">
           <a href="#" class="thumbnail">
             
             <img src="img/Technology.jpe" alt="...">
@@ -38,7 +39,7 @@
        
           </a>
         </div>
-        <div class="col-xs-6 col-md-3">
+        <div class="col-md-3">
           <a href="#" class="thumbnail">
             
             <img src="img/Science.jpe" alt="...">
@@ -48,7 +49,7 @@
          
           </a>
         </div>
-        <div class="col-xs-6 col-md-3">
+        <div class="col-md-3">
           <a href="#" class="thumbnail">
             <img src="img/Books.jpe" alt="...">
             <label class="btn btn-primary">
@@ -57,7 +58,7 @@
             
           </a>
         </div>
-        <div class="col-xs-6 col-md-3">
+        <div class="col-md-3">
           <a href="#" class="thumbnail">
             <img src="img/IT.jpe" alt="...">
             <label class="btn btn-primary">
@@ -67,7 +68,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-6 col-md-3">
+        <div class="col-md-3">
           <a href="#" class="thumbnail">
             <img src="img/Sport.jpe" alt="...">
             <label class="btn btn-primary">
@@ -76,7 +77,7 @@
           
           </a>
         </div>
-        <div class="col-xs-6 col-md-3">
+        <div class="col-md-3">
           <a href="#" class="thumbnail">
             <img src="img/Music.jpe" alt="...">
             <label class="btn btn-primary">
@@ -84,7 +85,7 @@
             </label>
           </a>
         </div>
-        <div class="col-xs-6 col-md-3">
+        <div class="col-md-3">
           <a href="#" class="thumbnail">
             <img src="img/Movies.jpe" alt="...">
             <label class="btn btn-primary">
@@ -93,7 +94,7 @@
             
           </a>
         </div>
-        <div class="col-xs-6 col-md-3">
+        <div class="col-md-3">
           <a href="#" class="thumbnail">
             <img src="img/Food.jpe" alt="...">
             <label class="btn btn-primary">
@@ -104,7 +105,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-6 col-md-3">
+        <div class="col-md-3">
           <a href="#" class="thumbnail">
             <img src="img/Fashion.jpe" alt="...">
             <label class="btn btn-primary">
@@ -112,7 +113,7 @@
             </label>
           </a>
         </div>
-        <div class="col-xs-6 col-md-3">
+        <div class="col-md-3">
           <a href="#" class="thumbnail">
             <img src="img/umjetnost.jpg" alt="...">
             <label class="btn btn-primary">
@@ -120,7 +121,7 @@
             </label>
                   </a>
         </div>
-        <div class="col-xs-6 col-md-3">
+        <div class="col-md-3">
           <a href="#" class="thumbnail">
             <img src="img/space.jpg" alt="...">
             <label class="btn btn-primary">
@@ -129,7 +130,7 @@
           
           </a>
         </div>
-        <div class="col-xs-6 col-md-3">
+        <div class="col-md-3">
           <a href="#" class="thumbnail">
             <img src="img/History.jpe" alt="...">
             <label class="btn btn-primary">

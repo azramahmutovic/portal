@@ -122,16 +122,24 @@ section#kategorije header {
   background: #3e78ad;
   position: relative;
   width: 100%;
-  height: 75px;
+  height: 100px;
   margin-bottom: 20px;
+}
+
+section#kategorije header{
+  padding-top: 15px;
+  font-family: 'Kalam', cursive;
+  color: #FFF;
+  font-size: 50px;
 }
 
 section#kategorije header h1{
   margin: 0px;
-  font-family: 'Kalam', cursive;
-  padding-top: 15px;
-  color: #FFF;
   font-size: 50px;
+}
+
+section#kategorije header p{
+  font-size: 20px;
 }
 
 /* line 424, ../sass/style.scss */
