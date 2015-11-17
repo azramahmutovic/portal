@@ -19,6 +19,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <title>Insert title here</title>
+    <script src="js/otvaranjestranice.js"></script>/*Zana rekla da ovdje stavim*/
 </head>
 <body>
 <div class="background"></div>
@@ -47,7 +48,7 @@
         </div>
         <button id="loginbtn" type="submit" class="btn btn-default" >Login</button>
     </form>
-    <p>Don't have an account? <a href="">Register</a><p>
+    <p>Don't have an account? <a href="" onclick="otvoristranicu('registracija.jsp')" >Register</a><p>
     <p><a href="">Continue as a guest</a></p>
 </section>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
