@@ -20,6 +20,7 @@
     <![endif]-->
     <title>Insert title here</title>
     <script src="js/otvaranjestranice.js"></script>/*Zana rekla da ovdje stavim*/
+    <script src="js/validacija.js"></script>
 </head>
 <body>
 <div class="background"></div>
@@ -33,7 +34,7 @@
                 <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
             </label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" name="email" placeholder="Email">
+                <input id="email" type="email" class="form-control" name="email" placeholder="Email">
                 <span id="mail_error"></span><br>
             </div>
         </div>
@@ -42,7 +43,7 @@
                 <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
             </label>
             <div class="col-sm-10">
-                <input type="password" class="form-control" name="password" placeholder="Password">
+                <input id="password" type="password" class="form-control" name="password" placeholder="Password">
                 <span id="password_error"></span><br>
             </div>
         </div>
@@ -55,6 +56,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
-<script src="js/validacija.js"></script>
+
 </body>
 </html>
