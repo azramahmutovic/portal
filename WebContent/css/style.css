@@ -123,6 +123,7 @@ section#kategorije header {
   position: relative;
   width: 100%;
   height: 75px;
+  margin-bottom: 20px;
 }
 
 section#kategorije header h1{
@@ -143,8 +144,23 @@ section#kategorije .btn-default {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+section#kategorije .btn-primary {
+    width: 100%;
+    border-radius: 0px;
+}
+
+
 /* line 433, ../sass/style.scss */
 section#kategorije a {
   color: #3e78ad;
   text-decoration: none;
+}
+
+section#kategorije .thumbnail img {
+  min-height: 80px;
+}
+
+section#kategorije .row {
+  margin: 0px;
 }
