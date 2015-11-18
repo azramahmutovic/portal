@@ -19,7 +19,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <title>Insert title here</title>
-    <script src="js/otvaranjestranice.js"></script>/*Zana rekla da ovdje stavim*/
+    <script src="js/otvaranjestranice.js"></script>
 </head>
 <body>
 <div class="background"></div>
