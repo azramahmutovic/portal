@@ -75,7 +75,7 @@ public class KorisnikDAO {
 	}
         
          public void dodajKorisnika(Korisnik k){
-            String sql="INSERT INTO Korisnik(naziv,email,password) VALUES(?, ?, ?)";
+            String sql="INSERT INTO korisnik(naziv,email,password) VALUES(?, ?, ?)";
             
             try{
                 
