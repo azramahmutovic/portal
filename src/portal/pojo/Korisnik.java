@@ -5,15 +5,26 @@ import portal.dao.KorisnikDAO;
 public class Korisnik {
 	
 	private Integer id;
+        private String naziv;
 	private String email;
 	private String password;
 	
 	public Integer getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+        
+        public void setId(Integer id) {
 		this.id = id;
 	}
+        
+        public String getNaziv() {
+		return naziv;
+	}
+        
+        public void setNaziv(String naziv) {
+		this.naziv=naziv;
+	}
+        
 	public String getEmail() {
 		return email;
 	}
@@ -37,4 +48,10 @@ public class Korisnik {
 			return false;
 			
 	}
+        
+        public void dodajKorisnikaUBazu(){
+            KorisnikDAO dao=new KorisnikDAO();
+            dao.dodajKorisnika(this);
+            
+        }
 }
