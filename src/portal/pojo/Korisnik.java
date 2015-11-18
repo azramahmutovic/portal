@@ -49,9 +49,9 @@ public class Korisnik {
 			
 	}
         
-        public void dodajKorisnikaUBazu(){
-            KorisnikDAO dao=new KorisnikDAO();
-            dao.dodajKorisnika(this);
-            
-        }
+    public void dodajKorisnika(){
+      KorisnikDAO dao=new KorisnikDAO();
+      dao.dodajKorisnika(this);   
+      
+    }
 }
