@@ -5,7 +5,7 @@ import java.util.List;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-
+import java.sql.SQLException; 
 import portal.konekcija.Konekcija;
 import portal.pojo.Korisnik;
 
@@ -72,4 +72,17 @@ public class KorisnikDAO {
 		
 		 return korisnik;
 	}
+        
+        public void dodajKorisnika(Korisnik k){
+         /*   String sql="INSERT INTO Korisnik(id,naziv,email,password) VALUES(k.getId(), k.getNaziv(), k.getEmail(), k.getPassword())";
+            try{
+                db.open();
+                   statement = db.getStatement(db.getConnection());
+    		   resultSet = statement.executeQuery(sql); 
+                db.closeConnection();	
+            } catch (SQLException e) {
+                e.printStackTrace();
+                }
+*/
+        } 
 }

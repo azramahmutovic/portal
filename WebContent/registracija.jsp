@@ -26,13 +26,13 @@
       <header>
         <h1>Portal</h1>
       </header>
-         <form class="form-horizontal" role="form" action="loginCheck.jsp" method="post">
+         <form class="form-horizontal" role="form" action="podaciReg1.jsp" method="post">
           <div class="form-group">
           <label class="control-label col-sm-2" for="user">
             <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
           </label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="user" placeholder="Full name">
+            <input type="text" class="form-control" id="user" name="username" placeholder="Full name">
           </div>
         </div>
         <div class="form-group">
@@ -56,7 +56,7 @@
              <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
           </label>
           <div class="col-sm-10">
-            <input type="password" class="form-control" name="password" placeholder="Retype password">
+            <input type="password" class="form-control" name="password2" placeholder="Retype password">
           </div>
         </div>
             <button type="submit" class="btn btn-default">Continue</button>
