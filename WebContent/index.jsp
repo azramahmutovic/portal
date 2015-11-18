@@ -28,7 +28,7 @@
     <header>
         <h1>Portal</h1>
     </header>
-    <img class="logo" alt="logo" src="img/Thunderwear.jpg" width=50% >
+    
     <form class="form-horizontal" role="form" action="loginCheck.jsp" method="post">
     
         <div class="form-group">
