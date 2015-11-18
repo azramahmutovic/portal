@@ -19,6 +19,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 <title>Insert title here</title>
+<script src="js/otvaranjestranice.js"></script>
 </head>
 <body>
 <div class="background"></div>
@@ -59,7 +60,7 @@
             <input type="password" class="form-control" name="password" placeholder="Retype password">
           </div>
         </div>
-            <button type="submit" class="btn btn-default">Continue</button>
+            <button type="submit" class="btn btn-default" onclick="otvoristranicu('kategorije.jsp')">Continue</button>
       </form>
     </section>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
