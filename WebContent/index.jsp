@@ -28,7 +28,6 @@
     <header>
         <h1>Portal</h1>
     </header>
-    <img class="logo" alt="logo" src="img/Thunderwear.jpg" width=50% >
     <form class="form-horizontal" role="form" action="loginCheck.jsp" method="post">
     
         <div class="form-group">
@@ -37,7 +36,7 @@
             </label>
             <div class="col-sm-10">
                 <input id="email" type="email" class="form-control" name="email" placeholder="Email">
-                <span id="mail_error"></span><br>
+                <span id="mail_error"></span>
             </div>
         </div>
         <div class="form-group">
@@ -47,7 +46,7 @@
             </label>
             <div class="col-sm-10">
                 <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-                <span id="password_error"></span><br>
+                <span id="password_error"></span>
             </div>
         </div>
         <button id="loginbtn" type="submit" class="btn btn-default" >Login</button>
