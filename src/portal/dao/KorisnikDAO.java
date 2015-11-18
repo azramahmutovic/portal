@@ -15,6 +15,7 @@ public class KorisnikDAO {
 	private ResultSet resultSet = null;
     private Statement statement = null;
     private PreparedStatement preparedStatement = null;
+    private PreparedStatement ubaciKorisnika=null;
     
     public List<Korisnik> dajKorisnike(){
     	
@@ -73,16 +74,27 @@ public class KorisnikDAO {
 		 return korisnik;
 	}
         
-        public void dodajKorisnika(Korisnik k){
-         /*   String sql="INSERT INTO Korisnik(id,naziv,email,password) VALUES(k.getId(), k.getNaziv(), k.getEmail(), k.getPassword())";
+         public void dodajKorisnika(Korisnik k){
+            String sql="INSERT INTO Korisnik(naziv,email,password) VALUES(?, ?, ?)";
+            
             try{
+                
                 db.open();
-                   statement = db.getStatement(db.getConnection());
-    		   resultSet = statement.executeQuery(sql); 
+                
+                   ubaciKorisnika=db.prepareStatement(db.getConnection(), sql);
+                   
+                   ubaciKorisnika.setString(1, k.getNaziv());
+                   ubaciKorisnika.setString(2, k.getEmail());
+                   ubaciKorisnika.setString(3, k.getPassword());
+                   
+                   ubaciKorisnika.executeUpdate();
+                           
                 db.closeConnection();	
-            } catch (SQLException e) {
-                e.printStackTrace();
-                }
-*/
+            
+                } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+
+        
         } 
 }
