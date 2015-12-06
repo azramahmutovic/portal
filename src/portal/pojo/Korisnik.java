@@ -1,14 +1,24 @@
 package portal.pojo;
 
-import portal.dao.KorisnikDAO;
-
 public class Korisnik {
 	
 	private Integer id;
-        private String naziv;
+    private String naziv;
 	private String email;
 	private String password;
+
+
+	public Korisnik() {
+		
+	}
 	
+	public Korisnik(String n, String e, String p){
+		naziv = n;
+		email = e;
+		password = p;
+	}
+	
+
 	public Integer getId() {
 		return id;
 	}
@@ -37,21 +47,5 @@ public class Korisnik {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	public boolean checkLogin(String email, String password){
-		
-		KorisnikDAO dao = new KorisnikDAO();
-		Korisnik k = dao.dajKorisnikaPoEmailu(email);
-		if(!k.getEmail().equals("") && !k.getPassword().equals("") && k.getEmail().equals(email) && k.getPassword().equals(password))
-			return true;
-		else
-			return false;
-			
-	}
-        
-    public void dodajKorisnika(){
-      KorisnikDAO dao=new KorisnikDAO();
-      dao.dodajKorisnika(this);   
-      
-    }
+	      
 }

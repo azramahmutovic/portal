@@ -27,43 +27,49 @@
         <h1>Categories</h1>
         <p>Select all the topics you're interested in</p>
       </header>
-      <div class="btn-group" data-toggle="buttons">
+      <form action="finish-registration" method="post">
+      
       <div class="row">
         <div class="col-md-3">
           <a href="#" class="thumbnail">
             
             <img src="img/Technology.jpe" alt="...">
+          	<div class="btn-group" data-toggle="buttons">
             <label class="btn btn-primary">
-                 <input type="checkbox" autocomplete="off"> Tech
+                 <input type="checkbox" name="category" value="Tech" autocomplete="off"> Tech
             </label>
-       
+            </div>
           </a>
         </div>
         <div class="col-md-3">
           <a href="#" class="thumbnail">
             
             <img src="img/Science.jpe" alt="...">
+            <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-primary">
-                 <input type="checkbox" autocomplete="off"> Science
+                 <input type="checkbox" name="category" value="Science" autocomplete="off"> Science
             </label>
-         
+            </div>
           </a>
         </div>
         <div class="col-md-3">
           <a href="#" class="thumbnail">
             <img src="img/Books.jpe" alt="...">
+            <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-primary">
-                 <input type="checkbox" autocomplete="off"> Books
+                 <input type="checkbox" name="category" value="Books" autocomplete="off"> Books
             </label>
-            
+            </div>
           </a>
         </div>
         <div class="col-md-3">
           <a href="#" class="thumbnail">
             <img src="img/IT.jpe" alt="...">
+            <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-primary">
-                 <input type="checkbox" autocomplete="off"> IT
+                 <input type="checkbox" name="category" value="IT" autocomplete="off"> IT
             </label>
+            </div>
           </a>
         </div>
       </div>
@@ -71,36 +77,41 @@
         <div class="col-md-3">
           <a href="#" class="thumbnail">
             <img src="img/Sport.jpe" alt="...">
+            <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-primary">
-                 <input type="checkbox" autocomplete="off"> Sport
+                 <input type="checkbox" name="category" value="Sport" autocomplete="off"> Sport
             </label>
-          
+            </div>
           </a>
         </div>
         <div class="col-md-3">
           <a href="#" class="thumbnail">
             <img src="img/Music.jpe" alt="...">
+            <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-primary">
-                 <input type="checkbox" autocomplete="off"> Music
+                 <input type="checkbox" name="category" value="Music" autocomplete="off"> Music
             </label>
+            </div>
           </a>
         </div>
         <div class="col-md-3">
           <a href="#" class="thumbnail">
             <img src="img/Movies.jpe" alt="...">
+            <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-primary">
-                 <input type="checkbox" autocomplete="off"> Movies
+                 <input type="checkbox" name="category" value="Movies" autocomplete="off"> Movies
             </label>
-            
+            </div>
           </a>
         </div>
         <div class="col-md-3">
           <a href="#" class="thumbnail">
             <img src="img/Food.jpe" alt="...">
+            <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-primary">
-                 <input type="checkbox" autocomplete="off"> Food
+                 <input type="checkbox" name="category" value="Food" autocomplete="off"> Food
             </label>
-         
+            </div>
           </a>
         </div>
       </div>
@@ -108,40 +119,46 @@
         <div class="col-md-3">
           <a href="#" class="thumbnail">
             <img src="img/Fashion.jpe" alt="...">
+            <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-primary">
-                 <input type="checkbox" autocomplete="off"> Fashion
+                 <input type="checkbox" name="category" value="Fashion" autocomplete="off"> Fashion
             </label>
+            </div>
           </a>
         </div>
         <div class="col-md-3">
           <a href="#" class="thumbnail">
             <img src="img/umjetnost.jpg" alt="...">
+            <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-primary">
-                 <input type="checkbox" autocomplete="off"> Art
+                 <input type="checkbox" name="category" value="Art" autocomplete="off"> Art
             </label>
-                  </a>
+            </div>
+          </a>
         </div>
         <div class="col-md-3">
           <a href="#" class="thumbnail">
             <img src="img/space.jpg" alt="...">
+            <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-primary">
-                 <input type="checkbox" autocomplete="off"> Space
+                 <input type="checkbox" name="category" value="Space" autocomplete="off"> Space
             </label>
-          
+            </div>
           </a>
         </div>
         <div class="col-md-3">
           <a href="#" class="thumbnail">
             <img src="img/History.jpe" alt="...">
+            <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-primary">
-                 <input type="checkbox" autocomplete="off"> History
+                 <input type="checkbox" name="category" value="History" autocomplete="off"> History
             </label>
-           
+            </div>
           </a>
         </div>
       </div>
-      </div>
       <button type="submit" class="btn btn-default">Register</button>
+      </form>
     </section>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

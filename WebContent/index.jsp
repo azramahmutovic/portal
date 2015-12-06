@@ -19,8 +19,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <title>Insert title here</title>
-    <script src="js/otvaranjestranice.js"></script>
-    <script src="js/validacija.js"></script>
+    <script src="js/skripta.js"></script>
 </head>
 <body>
 <div class="background"></div>
@@ -28,7 +27,7 @@
     <header>
         <h1>Portal</h1>
     </header>
-    <form class="form-horizontal" role="form" action="loginCheck.jsp" method="post">
+    <form class="form-horizontal" role="form" action="home" method="post">
     
         <div class="form-group">
             <label class="control-label col-sm-2" for="email">
@@ -51,7 +50,7 @@
         </div>
         <button id="loginbtn" type="submit" class="btn btn-default" >Login</button>
     </form>
-    <p>Don't have an account? <a href="" onclick="otvoristranicu('registracija.jsp')" >Register</a><p>
+    <p>Don't have an account? <a href="register">Register</a><p>
     <p><a href="">Continue as a guest</a></p>
 </section>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

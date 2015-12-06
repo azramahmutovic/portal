@@ -8,12 +8,19 @@ body, html {
 /* line 7, ../sass/style.scss */
 header {
   width: 100%;
-  height: 50px;
+  height: 55px;
+  background: #3e78ad;
+  color: #FFF;
   position: absolute;
   top: 0;
   z-index: 9;
 }
 
+header h1{
+  font-size: 50px;
+  font-family: 'Kalam', cursive;
+  margin: 0px;
+}
 
 /* line 370, ../sass/style.scss */
 section#login {
@@ -31,18 +38,13 @@ section#login {
 }
 /* line 382, ../sass/style.scss */
 section#login header {
-  background: #3e78ad;
   position: relative;
   width: 100%;
   height: 75px;
 }
 
 section#login header h1{
-  margin: 0px;
-  font-family: 'Kalam', cursive;
-  padding-top: 15px;
-  color: #FFF;
-  font-size: 50px;
+  padding-top: 15px; 
 }
 
 /* line 397, ../sass/style.scss */
@@ -119,7 +121,6 @@ section#kategorije {
 }
 /* line 382, ../sass/style.scss */
 section#kategorije header {
-  background: #3e78ad;
   position: relative;
   width: 100%;
   height: 100px;
@@ -128,14 +129,6 @@ section#kategorije header {
 
 section#kategorije header{
   padding-top: 15px;
-  font-family: 'Kalam', cursive;
-  color: #FFF;
-  font-size: 50px;
-}
-
-section#kategorije header h1{
-  margin: 0px;
-  font-size: 50px;
 }
 
 section#kategorije header p{
@@ -158,6 +151,9 @@ section#kategorije .btn-primary {
     border-radius: 0px;
 }
 
+section#kategorije .btn-group {
+    width: 100%;
+}
 
 /* line 433, ../sass/style.scss */
 section#kategorije a {
@@ -171,4 +167,97 @@ section#kategorije .thumbnail img {
 
 section#kategorije .row {
   margin: 0px;
+}
+
+section#pocetna{
+  height:80px;
+}
+
+section#pocetna h1{
+  font-size: 45px;
+}
+
+section#pocetna .input-group{
+  width: 100%;
+}
+
+section#pocetna .container{
+  margin-top: 10px;
+}
+
+section#pocetna .profil-btn{
+  float:right;
+}
+
+section#pocetna .btn-default{
+  color: #FFF;
+  background-color: #3e78ad;
+}
+
+section#novi-post{
+  color: #6A6A6A;
+  margin-bottom: 20px;
+}
+
+section#novi-post h2{
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 600;
+    color: #3e78ad;
+}
+
+section#novi-post .post-forma {
+  background: #F1F8FB;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 15px;
+  border-radius: 5px;
+  min-height: 455px;
+  border-radius: 5px;
+}
+/* line 640, ../sass/style.scss */
+section#novi-post .form-group {
+  margin: 12px 10px;
+  padding: 12px 12px;
+}
+/* line 643, ../sass/style.scss */
+section#novi-post .form-group textarea {
+  width: 100%;
+  resize: none;
+}
+/* line 649, ../sass/style.scss */
+section#novi-post .btn-default {
+  color: #FFF;
+  background-color: #3e78ad;
+  border: none;
+  float: right;
+  text-transform: uppercase;
+  padding: 8px 35px;
+  margin-top: 10px;
+}
+
+section#novi-post .form-control{
+  padding: 8px 15px;
+  margin: 10px 0px 0px 0px;
+  font-size: 15px;
+  width: 25%;
+}
+
+section#homepage .panel-info{
+    background: #F0EEEF;
+    color: #7A7A7A;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+section#homepage .panel-info li{
+    color: #7A7A7A;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+section#homepage .container{
+    margin-top: 20px;
 }
