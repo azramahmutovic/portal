@@ -5,8 +5,8 @@ import java.io.IOException;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
+import portal.mdl.RegisterModel;
 import portal.pojo.Korisnik;
-import portal.pojo.RegisterModel;
 
 @SuppressWarnings("serial")
 public class RegisterCategories extends HttpServlet {

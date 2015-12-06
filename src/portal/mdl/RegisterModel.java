@@ -1,6 +1,7 @@
-package portal.pojo;
+package portal.mdl;
 
 import portal.dao.KorisnikDAO;
+import portal.pojo.Korisnik;
 
 public class RegisterModel {
 	

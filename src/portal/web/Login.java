@@ -3,7 +3,7 @@ package portal.web;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-import portal.pojo.LoginModel;
+import portal.mdl.LoginModel;
 
 import java.io.*;
 
