@@ -3,12 +3,20 @@ package portal.web;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
+import portal.konekcija.Konekcija;
 import portal.mdl.LoginModel;
 
 import java.io.*;
 
 @SuppressWarnings("serial")
 public class Login extends HttpServlet{
+	
+	public void init (ServletConfig config) 
+			throws ServletException{
+		
+           super.init(config);
+           
+	}
 	
 	public void doPost(HttpServletRequest request,
 			HttpServletResponse response)
@@ -17,7 +25,8 @@ public class Login extends HttpServlet{
 			String email = request.getParameter("email");
 			String password = request.getParameter("password");
 			LoginModel login = new LoginModel();
-			boolean loggedIn = login.check(email,password);
+			Konekcija db = (Konekcija) getServletContext().getAttribute("db");
+			boolean loggedIn = login.check(db,email,password);
 			
 			RequestDispatcher view;
 			

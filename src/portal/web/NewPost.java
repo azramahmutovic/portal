@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
+import portal.konekcija.Konekcija;
 import portal.mdl.RegisterModel;
 
 
@@ -21,8 +22,9 @@ public class NewPost extends HttpServlet {
 		HttpSession session = request.getSession();
 		String email = (String) session.getAttribute("user");
 	
+		Konekcija db = (Konekcija) getServletContext().getAttribute("db");
 		RegisterModel register = new RegisterModel();
-		register.dodajPost(email, kategorija, tekst);
+		register.dodajPost(db, email, kategorija, tekst);
 		
 		RequestDispatcher view = request.getRequestDispatcher("home.jsp");
 		view.forward(request, response);

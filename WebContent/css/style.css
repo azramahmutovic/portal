@@ -243,12 +243,16 @@ section#novi-post .form-control{
   width: 25%;
 }
 
-section#homepage .panel-info{
+section#homepage .panel{
     background: #F0EEEF;
     color: #7A7A7A;
     font-size: 18px;
     font-weight: 600;
     text-transform: uppercase;
+}
+
+section#homepage .panel-body{
+    background: #FFFFFF;
 }
 
 section#homepage .panel-info li{

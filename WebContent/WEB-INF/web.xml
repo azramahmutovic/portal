@@ -4,6 +4,25 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  <listener>
+    <listener-class>portal.web.MyServletContextListener</listener-class>
+  </listener>
+  <context-param>
+    <param-name>url</param-name>
+    <param-value>jdbc:mysql://localhost:3306/</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>database</param-name>
+  	<param-value>portal</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>user_name</param-name>
+  	<param-value>root</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>password</param-name>
+  	<param-value>admin</param-value>
+  </context-param>
   <servlet>
 	<servlet-name>Login</servlet-name>
 	<servlet-class>portal.web.Login</servlet-class>

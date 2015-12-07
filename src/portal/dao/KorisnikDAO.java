@@ -11,20 +11,19 @@ import portal.pojo.Korisnik;
 
 public class KorisnikDAO {
 	
-	Konekcija db = new Konekcija();
 	private ResultSet resultSet = null;
     private Statement statement = null;
     private PreparedStatement preparedStatement = null;
     private PreparedStatement ubaciKorisnika=null;
     private PreparedStatement ps=null; 
     
-    public List<Korisnik> dajKorisnike(){
+    public List<Korisnik> dajKorisnike(Konekcija db){
     	
     	List<Korisnik> korisnici = new ArrayList<Korisnik>();
     	try {
     		
     		db.open();
-    		statement = db.getStatement(db.getConnection());
+    		statement = db.getStatement();
     		resultSet = statement
     		          .executeQuery("select * from korisnik");
     		
@@ -48,14 +47,14 @@ public class KorisnikDAO {
     	return korisnici;
     }
     
-	public Korisnik dajKorisnikaPoEmailu(String email){
+	public Korisnik dajKorisnikaPoEmailu(Konekcija db, String email){
 		
 		Korisnik korisnik = new Korisnik();
 		
 		try {
 			
     		db.open();
-			preparedStatement = db.prepareStatement(db.getConnection(), "select * from korisnik where email=?");
+			preparedStatement = db.prepareStatement("select * from korisnik where email=?");
 			preparedStatement.setString(1, email);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			if(resultSet.next()){
@@ -77,14 +76,14 @@ public class KorisnikDAO {
 		 return korisnik;
 	}
         
-         public void dodajKorisnika(Korisnik k){
+         public void dodajKorisnika(Konekcija db, Korisnik k){
             String sql="INSERT INTO korisnik(naziv,email,password) VALUES(?, ?, ?)";
             
             try{
                 
                 db.open();
                 
-                   ubaciKorisnika=db.prepareStatement(db.getConnection(), sql);
+                   ubaciKorisnika=db.prepareStatement(sql);
                    
                    ubaciKorisnika.setString(1, k.getNaziv());
                    ubaciKorisnika.setString(2, k.getEmail());
@@ -99,19 +98,19 @@ public class KorisnikDAO {
             }
         } 
          
-        public void dodajKategorije(Integer korisnik_id, String[] kategorije){
+        public void dodajKategorije(Konekcija db, Integer korisnik_id, String[] kategorije){
             String sql="INSERT INTO odabrana_kategorija(korisnik_id,kategorija_id) VALUES(?, ?)";
             
             try{
                 
                 db.open();
                 	
-                ps = db.prepareStatement(db.getConnection(), sql);
+                ps = db.prepareStatement(sql);
                 ps.setInt(1, korisnik_id);
          
                for(String kategorija : kategorije){
             	   String upit = "SELECT * FROM kategorija WHERE naziv=?";
-            	   PreparedStatement statement = db.prepareStatement(db.getConnection(), upit);
+            	   PreparedStatement statement = db.prepareStatement(upit);
             	   statement.setString(1, kategorija);
             	   ResultSet rs = statement.executeQuery();
             	   if(rs.next()){
@@ -130,18 +129,18 @@ public class KorisnikDAO {
             }
         }
         
-        public void dodajPost(Integer korisnik_id, String kategorija, String tekst){
+        public void dodajPost(Konekcija db, Integer korisnik_id, String kategorija, String tekst){
             String sql="INSERT INTO post(korisnik_id, kategorija_id, tekst) VALUES(?, ?, ?)";
             
             try{
                 
                 db.open();
                 	
-                ps = db.prepareStatement(db.getConnection(), sql);
+                ps = db.prepareStatement(sql);
                 ps.setInt(1, korisnik_id);
          
             	   String upit = "SELECT * FROM kategorija WHERE naziv=?";
-            	   PreparedStatement statement = db.prepareStatement(db.getConnection(), upit);
+            	   PreparedStatement statement = db.prepareStatement(upit);
             	   statement.setString(1, kategorija);
             	   ResultSet rs = statement.executeQuery();
             	   if(rs.next()){

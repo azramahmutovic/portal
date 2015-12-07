@@ -1,26 +1,31 @@
 package portal.mdl;
 
 import portal.dao.KorisnikDAO;
+import portal.konekcija.Konekcija;
 import portal.pojo.Korisnik;
 
 public class RegisterModel {
 	
-	 public void dodajKorisnika(Korisnik k){
+	 public void dodajKorisnika(Konekcija db, Korisnik k){
 	      KorisnikDAO dao=new KorisnikDAO();
-	      dao.dodajKorisnika(k);   
+	      dao.dodajKorisnika(db, k);   
 	    }
 	 
-	 public void dodajKategorije(String email, String[] kategorije){
+	 public void dodajKategorije(Konekcija db, String email, String[] kategorije){
 		 KorisnikDAO dao = new KorisnikDAO();
-		 Korisnik k = dao.dajKorisnikaPoEmailu(email);
+		 Korisnik k = dao.dajKorisnikaPoEmailu(db, email);
 		 Integer id = k.getId();
-		 dao.dodajKategorije(id, kategorije);
+		 dao.dodajKategorije(db, id, kategorije);
 	 }
 	 
-	 public void dodajPost(String email, String kategorija, String tekst){
+	 public void dajKategorije(String email){
+		 
+	 }
+	 
+	 public void dodajPost(Konekcija db, String email, String kategorija, String tekst){
 		 KorisnikDAO dao = new KorisnikDAO();
-		 Korisnik k = dao.dajKorisnikaPoEmailu(email);
+		 Korisnik k = dao.dajKorisnikaPoEmailu(db, email);
 		 Integer id = k.getId();
-		 dao.dodajPost(id, kategorija, tekst);
+		 dao.dodajPost(db, id, kategorija, tekst);
 	 }
 }

@@ -12,11 +12,13 @@ public class Konekcija {
 	 * Podaci potrebni za konekciju na MySql bazu podataka
 	 */
 	
-	static String korisnik = "root"; // Naziv korisnika za onekciju na BP
-	static String sifra = "admin"; // Sifra korisnika za konekciju na BP
+	String korisnik; // Naziv korisnika za onekciju na BP
+	String sifra; // Sifra korisnika za konekciju na BP
+	String url; // url za jednu konekciju
+	
 	static String driver = "org.gjt.mm.mysql.Driver"; // Drajver za konekciju na BP
 	static String driverOld = "com.mysql.jdbc.Driver"; // Drajver za konekciju - alternativni
-	static String url= "jdbc:mysql://localhost:3306/portal"; // url za jednu konekciju
+	
 	//static String url2 = "jdbc:mysql://localhost:3306/urls1"; // drugi URL
 	//static String url3 = "jdbc:mysql://localhost:3306/jdbcsotacnew"; // treci URL
 	
@@ -24,7 +26,7 @@ public class Konekcija {
 	protected int dbConnectionsMinCount = 4; // minimalan broj konekcija na BP
 	protected int dbConnectionsMaxCount = 10; // maksimalan broj konekcija na BP
 	protected int dbConnectionMaxWait = -1; // Maksimalno vrijeme cekanja za konekciju
-	protected BasicDataSource dataSource; // Osobina data source – potrebna za
+	protected BasicDataSource dataSource; // Osobina data source ï¿½ potrebna za
 	// naprednu konekciju na BP
 	
 	// Osobine potrebne za rad sa bazom podataka
@@ -35,7 +37,13 @@ public class Konekcija {
 	static ResultSet rezultat = null; // Osobina skup redova rezultata
 	static DatabaseMetaData metaPodaci = null; // Osobina meta podataka
 	
-	public synchronized void open() throws Exception {
+	public Konekcija(String url, String korisnik, String sifra){
+		this.url = url;
+		this.korisnik = korisnik;
+		this.sifra = sifra;
+	}
+	
+	public synchronized void open(){
 		// Using commons-dbcp's BasicDataSource
 		try {
 		dataSource = new BasicDataSource(); // instanciranje klase BasicDataSource
@@ -43,11 +51,12 @@ public class Konekcija {
 		dataSource.setUrl(url); // setovanje URL-a
 		dataSource.setUsername(korisnik); // setovanje naziva korisnika
 		dataSource.setPassword(sifra); // setovanje sifre
-		// setovanje minimalnog, maksimalnog broja konekcija kao i vremena èekanja
+		// setovanje minimalnog, maksimalnog broja konekcija kao i vremena ï¿½ekanja
 		// za uspostavu konekcije
 		dataSource.setMaxIdle(dbConnectionsMinCount);
 		dataSource.setMaxActive(dbConnectionsMaxCount);
 		dataSource.setMaxWait(dbConnectionMaxWait);
+		
 		} catch (Exception e) {
 		e.printStackTrace();
 		}
@@ -73,9 +82,10 @@ public class Konekcija {
 		}
 	}
 	
-	public Statement getStatement(Connection konekcija) {
+	public Statement getStatement() {
 		try {
-		// za datu konekciju kreira i vraæa objekat klase Statement
+		konekcija = this.getConnection();
+		// za datu konekciju kreira i vraï¿½a objekat klase Statement
 		iskaz = konekcija.createStatement();
 		} catch (SQLException e) {
 		e.printStackTrace();
@@ -83,8 +93,9 @@ public class Konekcija {
 		return iskaz;
 		}
 	
-	public PreparedStatement prepareStatement(Connection konekcija, String sql) {
+	public PreparedStatement prepareStatement(String sql) {
 		try {
+			konekcija = this.getConnection();
 			pripremljeniIskaz = konekcija.prepareStatement(sql);
 		} catch (SQLException e) {
 		e.printStackTrace();
