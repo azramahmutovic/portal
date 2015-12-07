@@ -7,6 +7,7 @@ import portal.konekcija.Konekcija;
 import portal.mdl.LoginModel;
 
 import java.io.*;
+import java.util.List;
 
 @SuppressWarnings("serial")
 public class Login extends HttpServlet{
@@ -26,6 +27,8 @@ public class Login extends HttpServlet{
 			String password = request.getParameter("password");
 			LoginModel login = new LoginModel();
 			Konekcija db = (Konekcija) getServletContext().getAttribute("db");
+			
+			//provjera podataka
 			boolean loggedIn = login.check(db,email,password);
 			
 			RequestDispatcher view;
@@ -33,9 +36,15 @@ public class Login extends HttpServlet{
 			if(loggedIn){
 				
 				HttpSession session = request.getSession();
+				Integer userID;
 				synchronized(session) {
-					session.setAttribute("user", email);
+					userID = login.dajKorisnikID(db, email);
+					session.setAttribute("userID", userID);
 				}
+				
+				//ucitaj kategorije koje korisnik prati
+				List<String> kategorije = login.dajKategorije(db, userID);
+				request.setAttribute("kategorije", kategorije);
 				view = request.getRequestDispatcher("home.jsp");
 			}
 				

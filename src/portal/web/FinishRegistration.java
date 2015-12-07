@@ -18,12 +18,13 @@ public class FinishRegistration extends HttpServlet {
 		String[] kategorije = request.getParameterValues("category");
 		
 		HttpSession session = request.getSession();
-		String email = (String) session.getAttribute("user");
+		Integer userID = (Integer) session.getAttribute("userID");
 		
 		Konekcija db = (Konekcija) getServletContext().getAttribute("db");
 		RegisterModel register = new RegisterModel();
-		register.dodajKategorije(db, email, kategorije);
+		register.dodajKategorije(db, userID, kategorije);
 		
+		request.setAttribute("kategorije", kategorije);
 		RequestDispatcher view = request.getRequestDispatcher("home.jsp");
 		view.forward(request, response);
 	}

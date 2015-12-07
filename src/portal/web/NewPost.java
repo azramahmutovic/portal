@@ -20,11 +20,11 @@ public class NewPost extends HttpServlet {
 		String tekst = request.getParameter("tekst");
 		
 		HttpSession session = request.getSession();
-		String email = (String) session.getAttribute("user");
+		Integer userID = (Integer) session.getAttribute("userID");
 	
 		Konekcija db = (Konekcija) getServletContext().getAttribute("db");
 		RegisterModel register = new RegisterModel();
-		register.dodajPost(db, email, kategorija, tekst);
+		register.dodajPost(db, userID, kategorija, tekst);
 		
 		RequestDispatcher view = request.getRequestDispatcher("home.jsp");
 		view.forward(request, response);

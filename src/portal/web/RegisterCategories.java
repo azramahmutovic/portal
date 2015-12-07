@@ -29,7 +29,8 @@ public class RegisterCategories extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		synchronized(session) {
-			session.setAttribute("user", email);
+			Integer userID = register.dajKorisnikID(db, email);
+			session.setAttribute("userID", userID);
 		}
 		
 		RequestDispatcher view = request.getRequestDispatcher("kategorije.jsp");

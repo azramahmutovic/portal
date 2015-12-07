@@ -97,38 +97,7 @@ public class KorisnikDAO {
                 ex.printStackTrace();
             }
         } 
-         
-        public void dodajKategorije(Konekcija db, Integer korisnik_id, String[] kategorije){
-            String sql="INSERT INTO odabrana_kategorija(korisnik_id,kategorija_id) VALUES(?, ?)";
-            
-            try{
-                
-                db.open();
-                	
-                ps = db.prepareStatement(sql);
-                ps.setInt(1, korisnik_id);
-         
-               for(String kategorija : kategorije){
-            	   String upit = "SELECT * FROM kategorija WHERE naziv=?";
-            	   PreparedStatement statement = db.prepareStatement(upit);
-            	   statement.setString(1, kategorija);
-            	   ResultSet rs = statement.executeQuery();
-            	   if(rs.next()){
-            		   Integer kategorija_id = rs.getInt("id");
-            		   ps.setInt(2, kategorija_id);
-            	   }
-            	   ps.addBatch();
-               }
-               
-               ps.executeBatch();
-               
-               db.closeConnection();	
-            
-                } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-        }
-        
+                 
         public void dodajPost(Konekcija db, Integer korisnik_id, String kategorija, String tekst){
             String sql="INSERT INTO post(korisnik_id, kategorija_id, tekst) VALUES(?, ?, ?)";
             
