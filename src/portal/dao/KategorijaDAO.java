@@ -53,7 +53,6 @@ public class KategorijaDAO {
     		while(resultSet.next()){
     			
 	    		Integer kategorija_id = resultSet.getInt("kategorija_id");
-	    		System.out.println(kategorija_id);
 	    		PreparedStatement ps2 = db.prepareStatement("SELECT * FROM kategorija where id=?");
 	    		ps2.setInt(1, kategorija_id);
 	    		ResultSet rs2 = ps2.executeQuery();

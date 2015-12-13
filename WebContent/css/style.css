@@ -243,25 +243,190 @@ section#novi-post .form-control{
   width: 25%;
 }
 
-section#homepage .panel{
-    background: #F0EEEF;
-    color: #7A7A7A;
-    font-size: 18px;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-section#homepage .panel-body{
-    background: #FFFFFF;
-}
-
-section#homepage .panel-info li{
-    color: #7A7A7A;
-    font-size: 18px;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
 section#homepage .container{
     margin-top: 20px;
+}
+
+section#posts {
+  margin-bottom: 115px;
+}
+/* line 380, ../sass/style.scss */
+section#posts .line-title {
+  font-size: 12px;
+  height: 8px;
+  margin: 25px 0px;
+  border-bottom: medium double #ebebeb;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  word-spacing: 6px;
+}
+/* line 390, ../sass/style.scss */
+section#posts .line-title span {
+  background: #FFF;
+  padding-right: 15px;
+}
+/* line 396, ../sass/style.scss */
+section#posts .carousel-control {
+  width: 0%;
+  opacity: 1;
+}
+/* line 400, ../sass/style.scss */
+section#posts .carousel-control .glyphicon {
+  top: 30%;
+  text-shadow: none;
+  color: #FFF;
+  background: #BA9955;
+}
+/* line 408, ../sass/style.scss */
+section#posts h1 {
+  font-size: 18px;
+  text-transform: uppercase;
+  margin: 20px 0px;
+  color: #31708f;
+}
+/* line 415, ../sass/style.scss */
+section#posts p {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 13px;
+  line-height: 1.7;
+}
+/* line 421, ../sass/style.scss */
+section#posts .read-more {
+  width: 100%;
+  height: 32px;
+  border-top: 1px solid #EBEBEB;
+  border-bottom: 1px solid #EBEBEB;
+  text-transform: uppercase;
+  line-height: 32px;
+  vertical-align: middle;
+}
+/* line 430, ../sass/style.scss */
+section#posts .read-more small {
+  font-family: "Source Sans Pro",sans-serif;
+  font-size: 12px;
+  color: #8a8a8a;
+  float: left;
+}
+/* line 437, ../sass/style.scss */
+section#posts .read-more a {
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 10px;
+  color: #31708f;
+  float: right;
+}
+/* line 446, ../sass/style.scss */
+section#posts .post {
+  margin-bottom: 26px;
+}
+/* line 450, ../sass/style.scss */
+section#posts .carousel-indicators {
+  top: -25px;
+  overflow: hidden;
+  z-index: -1;
+  bottom: 100%;
+}
+/* line 457, ../sass/style.scss */
+section#posts .carousel-indicators .active {
+  background-color: #EBEBEB;
+}
+/* line 461, ../sass/style.scss */
+section#posts .carousel-indicators li {
+  background-color: rgba(235, 235, 235, 0.6);
+  border: none;
+}
+/* line 467, ../sass/style.scss */
+section#posts #popular-posts {
+  margin-top: 60px;
+  position: relative;
+  z-index: 9;
+}
+
+/* line 479, ../sass/style.scss */
+section#posts .picture {
+  position: relative;
+}
+
+/* line 549, ../sass/style.scss */
+section#posts .category {
+  margin-top: -25px;
+}
+/* line 553, ../sass/style.scss */
+section#posts nav {
+  padding: 0px;
+  text-align: left;
+  font-family: "Source Sans Pro",sans-serif;
+}
+/* line 558, ../sass/style.scss */
+section#posts nav a {
+  color: #8a8a8a;
+  font-size: 12px;
+}
+/* line 563, ../sass/style.scss */
+section#posts nav li {
+  padding: 4px;
+  margin: 5px;
+  transition: background 0.5s ease-in-out;
+  min-width: 25px;
+  text-align: center;
+  display: inline-block;
+}
+/* line 572, ../sass/style.scss */
+section#posts nav li:hover {
+  background: #EBEBEB;
+}
+
+section#info h3 {
+  width: 100%;
+  height: 50px;
+  color: #31708f;
+  background: none;
+  border: #31708f 1px solid;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 50px;
+  vertical-align: middle;
+  letter-spacing: 2px;
+}
+
+section#info .categories {
+  margin: 20px 0px;
+  letter-spacing: 1px;
+}
+
+section#info .categories ul{
+  list-style-type: none;
+  padding: 0px;
+}
+
+/* line 237, ../sass/style.scss */
+section#info .categories ul :last-child {
+  border: none;
+}
+/* line 242, ../sass/style.scss */
+section#info .categories li {
+  line-height: 40px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  border-bottom: #EBEBEB 1px solid;
+  padding: 0px 2px;
+}
+/* line 250, ../sass/style.scss */
+section#info .categories a {
+  text-decoration: none;
+  color: #b2b2b2;
+  font-size: 11px;
+}
+
+.border {
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 40px;
+}
+
+.border ul{
+	margin: 0px;
 }

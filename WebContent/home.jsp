@@ -41,7 +41,7 @@
       </div>
       <div class="col-md-4">
         <div class="profil-btn">
-          <button type="button" class="btn btn-info" onclick="ucitaj('novi-post.jsp')">Publish Post</button>
+          <button type="button" class="btn btn-info" onclick="return loadNewPost('novi-post.jsp');">Publish Post</button>
           <button type="button" class="btn btn-default">Profile</button>
           <button type="button" class="btn btn-default">Messages</button>
         </div>
@@ -55,27 +55,100 @@
 <section id="homepage">
   <div class="container">
     <div class="col-md-3">
-      <div class="panel panel-info">
-        <!-- Default panel contents -->
-        <div class="panel-heading">My categories</div>
-        
-        <!-- List group -->
-        <ul class="list-group">
+      <section id="info">
+      <h3>categories</h3>
+      <div class="categories">
+        <ul>
         <c:forEach var="kategorija" items="${kategorije}" >
-			<li class="list-group-item">${kategorija}</li>
+			<li><a href="" onclick="return loadCategoryPosts('kategorija-postovi.jsp');">${kategorija}</a></li>
 		</c:forEach>
-        </ul>
-      </div>
+        </ul>     
+      </div>   
+    </section>
     </div>
     <div class="col-md-9">
-          <div class="panel panel-primary">
-          <!-- Default panel contents -->
-          <div class="panel-heading">Posts</div>
-          <div class="panel-body">
-            <p>...</p>
+
+ 	<section id="posts">
+	<div ID="postWrapper">
+    <!-- latest posts -->
+
+      <h2 class="line-title"><span>latest posts</span></h2>
+
+       <div id="latestPostSlide" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#latestPostSlide" data-slide-to="0" class="active"></li>
+          <li data-target="#latestPostSlide" data-slide-to="1"></li>
+          <li data-target="#latestPostSlide" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <img src="img/latest-post.jpg" alt="...">
+            <h1>SAMPLE POST WITH IMAGE ALIGNED RIGHT</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dui purus, imperdiet quis luctus ut, commodo porttitor mauris. Etiam non pellentesque massa. Integer hendrerit odio ut molestie dictum. Nulla mollis suscipit tellus non semper. Cras vitae nunc dictum, malesuada turpis eu, rhoncus nisl. Nullam congue facilisis orci, sit amet consequat dui venenatis sed. Phasellus rhoncus libero vel lectus cursus, sed tempor leo cursus. Donec condimentum metus magna, vel porta urna laoreet a. Morbi posuere et dolor id auctor. Integer condimentum nunc nec sagittis fringilla. In non pretium nunc. </p>
+            <div class="read-more">
+              <small>SEP 30, 2015</small>
+              <a href="">read more</a>
+            </div>
           </div>
+          <div class="item">
+            <img src="img/latest-post.jpg" alt="...">
+            <h1>SAMPLE POST WITH IMAGE ALIGNED RIGHT</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dui purus, imperdiet quis luctus ut, commodo porttitor mauris. Etiam non pellentesque massa. Integer hendrerit odio ut molestie dictum. Nulla mollis suscipit tellus non semper. Cras vitae nunc dictum, malesuada turpis eu, rhoncus nisl. Nullam congue facilisis orci, sit amet consequat dui venenatis sed. Phasellus rhoncus libero vel lectus cursus, sed tempor leo cursus. Donec condimentum metus magna, vel porta urna laoreet a. Morbi posuere et dolor id auctor. Integer condimentum nunc nec sagittis fringilla. In non pretium nunc. </p>
+            <div class="read-more">
+              <small>SEP 30, 2015</small>
+              <a href="">read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <img src="img/latest-post.jpg" alt="...">
+            <h1>SAMPLE POST WITH IMAGE ALIGNED RIGHT</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dui purus, imperdiet quis luctus ut, commodo porttitor mauris. Etiam non pellentesque massa. Integer hendrerit odio ut molestie dictum. Nulla mollis suscipit tellus non semper. Cras vitae nunc dictum, malesuada turpis eu, rhoncus nisl. Nullam congue facilisis orci, sit amet consequat dui venenatis sed. Phasellus rhoncus libero vel lectus cursus, sed tempor leo cursus. Donec condimentum metus magna, vel porta urna laoreet a. Morbi posuere et dolor id auctor. Integer condimentum nunc nec sagittis fringilla. In non pretium nunc.  </p>
+            <div class="read-more">
+              <small>SEP 30, 2015</small>
+              <a href="">read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="line-title"><span>popular posts</span></h2>
+       <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="post">
+                  <div class="picture">
+                    <img src="img/popular1.jpg" class="img-responsive" alt="...">
+                  </div>
+                    <h1>SAMPLE POST WITH IMAGE ALIGNED RIGHT</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dui purus, imperdiet quis luctus ut, commodo porttitor mauris. Etiam non pellentesque massa. Integer hendrerit odio ut molestie dictum. Nulla mollis suscipit tellus non semper. Cras vitae nunc dictum, malesuada turpis eu, rhoncus nisl. Nullam congue facilisis orci, sit amet consequat dui venenatis sed. Phasellus rhoncus libero vel lectus cursus, sed tempor leo cursus. Donec condimentum metus magna, vel porta urna laoreet a. Morbi posuere et dolor id auctor. Integer condimentum nunc nec sagittis fringilla. In non pretium nunc. </p>
+                    <div class="read-more">
+                      <small>SEP 30, 2015</small>
+                      <a href="">read more</a>
+                    </div>
+                </div>
+              </div>
+
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="post">
+                    <div class="picture">
+                    <img src="img/popular2.jpg" class="img-responsive" alt="...">
+                  </div>
+                    <h1>SAMPLE POST WITH IMAGE ALIGNED RIGHT</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dui purus, imperdiet quis luctus ut, commodo porttitor mauris. Etiam non pellentesque massa. Integer hendrerit odio ut molestie dictum. Nulla mollis suscipit tellus non semper. Cras vitae nunc dictum, malesuada turpis eu, rhoncus nisl. Nullam congue facilisis orci, sit amet consequat dui venenatis sed. Phasellus rhoncus libero vel lectus cursus, sed tempor leo cursus. Donec condimentum metus magna, vel porta urna laoreet a. Morbi posuere et dolor id auctor. Integer condimentum nunc nec sagittis fringilla. In non pretium nunc. </p>
+                  <div class="read-more">
+                    <small>SEP 30, 2015</small>
+                    <a href="">read more</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+     </div>
+    </section>
+    
     </div>
-    </div>
+
+
 
   </div>
 </section>
