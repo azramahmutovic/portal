@@ -17,7 +17,14 @@ public class KorisnikDAO {
     private PreparedStatement ubaciKorisnika=null;
     private PreparedStatement ps=null; 
     
-    public List<Korisnik> dajKorisnike(Konekcija db){
+	private Konekcija db;
+	
+	public KorisnikDAO(){
+		
+		db = new Konekcija();
+	}
+	
+    public List<Korisnik> dajKorisnike(){
     	
     	List<Korisnik> korisnici = new ArrayList<Korisnik>();
     	try {
@@ -47,7 +54,33 @@ public class KorisnikDAO {
     	return korisnici;
     }
     
-	public Korisnik dajKorisnikaPoEmailu(Konekcija db, String email){
+    public Korisnik dajKorisnikaPoID(Integer korisnik_id){
+		
+		Korisnik korisnik = new Korisnik();
+		
+		try {
+			
+    		db.open();
+			preparedStatement = db.prepareStatement("select * from korisnik where id=?");
+			preparedStatement.setInt(1, korisnik_id);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			if(resultSet.next()){
+				korisnik.setId(resultSet.getInt("id"));
+				korisnik.setNaziv(resultSet.getString("naziv"));
+				korisnik.setEmail(resultSet.getString("email"));
+				korisnik.setPassword(resultSet.getString("password"));
+			}
+			
+    		db.closeConnection();	
+    		
+    	} catch (Exception e) {
+    		e.printStackTrace();
+    		}
+		
+		 return korisnik;
+	}
+    
+	public Korisnik dajKorisnikaPoEmailu(String email){
 		
 		Korisnik korisnik = new Korisnik();
 		
@@ -76,7 +109,7 @@ public class KorisnikDAO {
 		 return korisnik;
 	}
         
-         public void dodajKorisnika(Konekcija db, Korisnik k){
+         public void dodajKorisnika(Korisnik k){
             String sql="INSERT INTO korisnik(naziv,email,password) VALUES(?, ?, ?)";
             
             try{
@@ -98,8 +131,8 @@ public class KorisnikDAO {
             }
         } 
                  
-        public void dodajPost(Konekcija db, Integer korisnik_id, String kategorija, String tekst){
-            String sql="INSERT INTO post(korisnik_id, kategorija_id, tekst) VALUES(?, ?, ?)";
+        public void dodajPost(Integer korisnik_id, String kategorija, String tekst, String imgPath){
+            String sql="INSERT INTO post(korisnik_id, kategorija_id, tekst, img) VALUES(?, ?, ?, ?)";
             
             try{
                 
@@ -118,6 +151,7 @@ public class KorisnikDAO {
             	   }
             	   
                ps.setString(3, tekst);   
+               ps.setString(4, imgPath);
                ps.executeUpdate();
                
                db.closeConnection();	

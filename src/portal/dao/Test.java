@@ -8,7 +8,7 @@ public class Test {
 
 		public static void main(String[] args) throws Exception{ 
 			
-		/*	KorisnikDAO dao = new KorisnikDAO();
+			KorisnikDAO dao = new KorisnikDAO();
 			
 			Korisnik k = dao.dajKorisnikaPoEmailu("azra");
 			System.out.println(" PASSWORD: " + k.getPassword());
@@ -21,7 +21,7 @@ public class Test {
 				System.out.println(" PASSWORD: " + korisnici.get(i).getPassword());
 				
 			}
-			*/
+			
 			
 		}
 			

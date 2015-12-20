@@ -9,10 +9,10 @@ import portal.pojo.Korisnik;
 
 public class LoginModel {
 	
-	public boolean check(Konekcija db,String email, String password){
+	public boolean check(String email, String password){
 		
 		KorisnikDAO dao = new KorisnikDAO();
-		Korisnik k = dao.dajKorisnikaPoEmailu(db, email);
+		Korisnik k = dao.dajKorisnikaPoEmailu(email);
 		if(!k.getEmail().equals("") && !k.getPassword().equals("") && k.getEmail().equals(email) && k.getPassword().equals(password))
 			return true;
 		else
@@ -20,17 +20,17 @@ public class LoginModel {
 			
 	}
 	
-	public Integer dajKorisnikID(Konekcija db, String email){
+	public Integer dajKorisnikID(String email){
 		
 		 KorisnikDAO dao = new KorisnikDAO();
-		 Korisnik k = dao.dajKorisnikaPoEmailu(db, email);
+		 Korisnik k = dao.dajKorisnikaPoEmailu(email);
 		 return k.getId();
 	}
 	
-	public List<String> dajKategorije(Konekcija db, Integer korisnik_id){
+	public List<String> dajKategorije(Integer korisnik_id){
 		
 		KategorijaDAO dao = new KategorijaDAO();
-		return dao.dajKategorije(db, korisnik_id);
+		return dao.dajKategorije(korisnik_id);
 		
 	}
 }

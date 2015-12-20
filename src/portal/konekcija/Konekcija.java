@@ -12,9 +12,9 @@ public class Konekcija {
 	 * Podaci potrebni za konekciju na MySql bazu podataka
 	 */
 	
-	String korisnik; // Naziv korisnika za onekciju na BP
-	String sifra; // Sifra korisnika za konekciju na BP
-	String url; // url za jednu konekciju
+	String korisnik = "user1"; // Naziv korisnika za onekciju na BP
+	String sifra = "admin"; // Sifra korisnika za konekciju na BP
+	String url = "jdbc:mysql://localhost:3306/portal"; // url za jednu konekciju
 	
 	static String driver = "org.gjt.mm.mysql.Driver"; // Drajver za konekciju na BP
 	static String driverOld = "com.mysql.jdbc.Driver"; // Drajver za konekciju - alternativni
@@ -36,12 +36,6 @@ public class Konekcija {
 	static PreparedStatement pripremljeniIskaz = null;
 	static ResultSet rezultat = null; // Osobina skup redova rezultata
 	static DatabaseMetaData metaPodaci = null; // Osobina meta podataka
-	
-	public Konekcija(String url, String korisnik, String sifra){
-		this.url = url;
-		this.korisnik = korisnik;
-		this.sifra = sifra;
-	}
 	
 	public synchronized void open(){
 		// Using commons-dbcp's BasicDataSource

@@ -23,13 +23,12 @@ public class RegisterCategories extends HttpServlet {
 		
 		Korisnik korisnik = new Korisnik(ime, email, password);
 		
-		Konekcija db = (Konekcija) getServletContext().getAttribute("db");
 		RegisterModel register = new RegisterModel();
-		register.dodajKorisnika(db, korisnik);
+		register.dodajKorisnika(korisnik);
 		
 		HttpSession session = request.getSession();
 		synchronized(session) {
-			Integer userID = register.dajKorisnikID(db, email);
+			Integer userID = register.dajKorisnikID(email);
 			session.setAttribute("userID", userID);
 		}
 		

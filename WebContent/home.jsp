@@ -41,9 +41,9 @@
       </div>
       <div class="col-md-4">
         <div class="profil-btn">
-          <button type="button" class="btn btn-info" onclick="return loadNewPost('novi-post.jsp');">Publish Post</button>
+          <button type="button" class="btn btn-info" onclick="return loadPosts('novi-post.jsp');">Publish Post</button>
           <button type="button" class="btn btn-default">Profile</button>
-          <button type="button" class="btn btn-default">Messages</button>
+          <a href="inbox"><button type="button" class="btn btn-default">Messages</button></a>
         </div>
         
       </div>
@@ -51,7 +51,6 @@
     </div>
   </header>
 </section>
-<div ID="wrapper">
 <section id="homepage">
   <div class="container">
     <div class="col-md-3">
@@ -60,7 +59,7 @@
       <div class="categories">
         <ul>
         <c:forEach var="kategorija" items="${kategorije}" >
-			<li><a href="" onclick="return loadCategoryPosts('kategorija-postovi.jsp');">${kategorija}</a></li>
+			<li><a href="" onclick="return loadPosts('kategorija-postovi.jsp');">${kategorija}</a></li>
 		</c:forEach>
         </ul>     
       </div>   
@@ -73,7 +72,7 @@
     <!-- latest posts -->
 
       <h2 class="line-title"><span>latest posts</span></h2>
-
+		
        <div id="latestPostSlide" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -152,7 +151,6 @@
 
   </div>
 </section>
-</div>
 	<script src="js/skripta.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

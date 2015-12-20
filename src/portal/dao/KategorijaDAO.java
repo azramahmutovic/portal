@@ -9,7 +9,14 @@ import portal.konekcija.Konekcija;
 
 public class KategorijaDAO {
 	
-    public void dodajKategorije(Konekcija db, Integer korisnik_id, String[] kategorije){
+	private Konekcija db;
+	
+	public KategorijaDAO(){
+		
+		db = new Konekcija();
+	}
+	
+    public void dodajKategorije(Integer korisnik_id, String[] kategorije){
         String sql="INSERT INTO odabrana_kategorija(korisnik_id,kategorija_id) VALUES(?, ?)";
         
         try{
@@ -40,7 +47,7 @@ public class KategorijaDAO {
             }
     }
     
-    public List<String> dajKategorije(Konekcija db, Integer korisnik_id){
+    public List<String> dajKategorije(Integer korisnik_id){
     	
     	List<String> kategorije = new ArrayList<String>();
     	try {

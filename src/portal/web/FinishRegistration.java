@@ -5,7 +5,6 @@ import java.io.IOException;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-import portal.konekcija.Konekcija;
 import portal.mdl.RegisterModel;
 
 @SuppressWarnings("serial")
@@ -20,9 +19,8 @@ public class FinishRegistration extends HttpServlet {
 		HttpSession session = request.getSession();
 		Integer userID = (Integer) session.getAttribute("userID");
 		
-		Konekcija db = (Konekcija) getServletContext().getAttribute("db");
 		RegisterModel register = new RegisterModel();
-		register.dodajKategorije(db, userID, kategorije);
+		register.dodajKategorije(userID, kategorije);
 		
 		request.setAttribute("kategorije", kategorije);
 		RequestDispatcher view = request.getRequestDispatcher("home.jsp");
