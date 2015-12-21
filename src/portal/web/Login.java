@@ -43,8 +43,8 @@ public class Login extends HttpServlet{
 			String email = request.getParameter("email");
 			String password = request.getParameter("password");
 			
-			String s = service.path("rest").path("korisnik").path("email").path("password").request().accept(MediaType.APPLICATION_JSON).get(String.class);
-			System.out.println(s);
+			//String s = service.path("rest").path("korisnik").path("email").path("password").request().accept(MediaType.APPLICATION_JSON).get(String.class);
+			//System.out.println(s);
 			
 			LoginModel login = new LoginModel();
 			
